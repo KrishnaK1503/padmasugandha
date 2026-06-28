@@ -1,0 +1,47 @@
+
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Literary Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter;background:#16090D;color:#EFE5D5;background-image:radial-gradient(circle at top,#4a1128 0,#16090D 55%),linear-gradient(135deg,#16090D,#24102F)}
+nav{position:fixed;top:0;width:100%;padding:18px 7%;display:flex;justify-content:space-between;background:rgba(15,7,10,.5);backdrop-filter:blur(10px);border-bottom:1px solid rgba(199,163,90,.2)}
+nav a{color:#e8d9c1;text-decoration:none;margin-left:24px}section{padding:110px 8%}h1,h2{font-family:"Cormorant Garamond",serif}h1{font-size:clamp(56px,8vw,92px);text-align:center}.lead{max-width:850px;margin:auto;font-size:20px;line-height:1.9;text-align:center}.btn{display:inline-block;padding:14px 28px;border:1px solid #C7A35A;color:#C7A35A;text-decoration:none}.slide{display:none;max-width:900px;margin:auto}.slide.active{display:block;animation:f .6s}.cover{height:420px;background:linear-gradient(160deg,#5b0b14,#24102F);border:1px solid rgba(199,163,90,.3);border-radius:14px;display:flex;align-items:center;justify-content:center;font:40px "Cormorant Garamond"}@keyframes f{from{opacity:.2}to{opacity:1}}.controls{text-align:center;margin-top:25px}button{background:none;border:1px solid #C7A35A;color:#C7A35A;padding:10px 20px;margin:0 8px;cursor:pointer}
+.menu{display:none}@media(max-width:768px){.menu{display:block;color:#C7A35A;font-size:28px;cursor:pointer}.navlinks{display:none;position:absolute;top:70px;right:5%;background:#16090D;padding:12px;border:1px solid #C7A35A}.navlinks.open{display:flex;flex-direction:column}.navlinks a{margin:10px 0}h1{font-size:48px}}section{scroll-margin-top:90px}</style></head><body>
+<nav><div style="display:flex;align-items:center;gap:12px">
+<div style="width:42px;height:42px;border:2px solid #C7A35A;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C7A35A;font-family:'Cormorant Garamond';font-size:24px;">❀</div>
+<div><a href="#home" style="font-family:'Cormorant Garamond';font-size:30px;color:#EFE5D5;line-height:1;text-decoration:none">Padmasundh</a><div style="font-size:11px;letter-spacing:3px;color:#C7A35A;text-transform:uppercase">Publishing</div></div>
+</div><div class="navlinks"><a href="#books">Books</a><a href="#coming">Coming</a><a href="#about">About</a><a href="#contact">Contact</a></div><div class="menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</div></nav>
+<section id="home"><h1>Publishing With Intention.<br>Building a Lasting Archive.</h1><p class="lead">Every title becomes part of a carefully curated literary archive.</p></section>
+
+<section id="books">
+<h2 style="text-align:center;font-size:58px">Featured Publications</h2>
+
+<div class="slide active">
+<div class="cover">Book I Cover</div>
+<h2>Rhythm of Cosmic Footprints</h2>
+<p>A poetic journey through soulmate connections, awakening and silence.</p>
+<a class="btn" href="#">Buy on Amazon</a>
+</div>
+
+<div class="slide">
+<div class="cover">Book II Cover</div>
+<h2>Second Publication</h2>
+<p>Your second publication description goes here.</p>
+<a class="btn" href="#">Buy on Amazon</a>
+</div>
+
+<div class="controls">
+<button onclick="move(-1)">◀ Previous</button>
+<button onclick="move(1)">Next ▶</button>
+</div>
+</section>
+
+<section id="coming"><h2>The Archive Continues</h2></section>
+<section id="about"><h2>A Curated Archive</h2><p>Our publication exists as a carefully curated archive of meaningful works. Every book earns its place.</p></section>
+<section id="contact"><h2>Contact</h2><p>contact@yourpublication.com</p></section>
+<script>
+let i=0,s=document.querySelectorAll('.slide');
+function show(){s.forEach((e,n)=>e.classList.toggle('active',n===i))}
+function move(d){i=(i+d+s.length)%s.length;show()}
+</script>
+</body></html>
